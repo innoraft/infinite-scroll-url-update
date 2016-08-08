@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-82157016-1', 'auto'); //mytest.com
+          ga('send', 'pageview');
+
+        </script>
+        <script>            
+            $(function () {
+                var currentHash = "#Namaste1"
+                $(document).scroll(function () {
+                    $('.hash').each(function () {
+                        var top = window.pageYOffset;
+                        var distance = top - $(this).offset().top;
+                        var hash = $(this).attr('id');
+
+                        if (distance < 30 && distance > -30 && currentHash != hash) {
+                            currentHash = hash;
+                            window.history.pushState("object or string", hash, "/"+hash);
+                            ga('send', 'pageview', { page: hash });
+                        }
+                    });
+                });
+            });
+            
+            $(document).ready(function() {
+                var win = $(window);
+
+                // Each time the user scrolls
+                win.scroll(function() {
+                    // End of the document reached?
+                    if ($(document).height() - win.height() == win.scrollTop()) {
+                        $('#loading').show();
+
+//                        $.ajax({
+//                            url: 'get-post.php',
+//                            dataType: 'html',
+//                            success: function(html) {
+//                                $('#posts').append(html);
+//                                $('#loading').hide();
+//                            }
+//                        });
+                        $('#posts').append("<li><article id='Namaste3' class='hash'><h1>Namaste3</h1><p>Lorem ipsum dolor sit amet, et aperiam qualisque sit. Posse diceret corrumpit eu sed. Nam no detraxit convenire. Exerci commodo postulant mel ex. Eos hendrerit voluptaria et, at est assum euripidis, te nam eius euismod delectus. Sea ei legendos sensibus delicatissimi, etiam sonet adversarium no qui.</p><p>Ius atqui commune at, nominavi definitiones cum ad. Mei no clita bonorum appareat. No pri regione inimicus persecuti. Cu per mutat propriae repudiare. Saepe ridens aliquam an pri.</p><p>Ea elaboraret honestatis per. Option pericula mea ad, singulis torquatos ei sea, rebum latine bonorum has id. Eros graeci euismod per ei. Has doctus impetus tritani id, ex pri falli delenit probatus. Duo ut omnesque legendos intellegat, in est summo dicant nusquam.</p><p>Cetero feugiat lucilius an per, in eam dicam aliquid mnesarchum. At vis facer adipisci necessitatibus, id cetero aliquip usu, odio corpora liberavisse vis ea. In quo porro aeque. Ne ipsum aeque epicuri sea. Te vel maiorum insolens expetendis, et primis detracto corrumpit sit, agam case movet vis ut. Ei per solum detraxit dissentiet, zril torquatos quo cu.</p></article></li>");
+                        $('#loading').hide();
+                    }
+                });
+            });
+            
+        </script>
+    </head>
+    <body>
+        <ul id="posts">
+            <li>
+                <article id="Namaste1" class="hash">
+                    <h1>Namaste1</h1>
+                    <p>Lorem ipsum dolor sit amet, et aperiam qualisque sit. Posse diceret corrumpit eu sed. Nam no detraxit convenire. Exerci commodo postulant mel ex. Eos hendrerit voluptaria et, at est assum euripidis, te nam eius euismod delectus. Sea ei legendos sensibus delicatissimi, etiam sonet adversarium no qui.</p>
+                    <p>Ius atqui commune at, nominavi definitiones cum ad. Mei no clita bonorum appareat. No pri regione inimicus persecuti. Cu per mutat propriae repudiare. Saepe ridens aliquam an pri.</p><p>Ea elaboraret honestatis per. Option pericula mea ad, singulis torquatos ei sea, rebum latine bonorum has id. Eros graeci euismod per ei. Has doctus impetus tritani id, ex pri falli delenit probatus. Duo ut omnesque legendos intellegat, in est summo dicant nusquam.</p><p>Cetero feugiat lucilius an per, in eam dicam aliquid mnesarchum. At vis facer adipisci necessitatibus, id cetero aliquip usu, odio corpora liberavisse vis ea. In quo porro aeque. Ne ipsum aeque epicuri sea. Te vel maiorum insolens expetendis, et primis detracto corrumpit sit, agam case movet vis ut. Ei per solum detraxit dissentiet, zril torquatos quo cu.</p>
+                </article>
+            </li>
+            <li>
+                <article id="Namaste2" class="hash">
+                    <h1>Namaste2</h1>
+                    <p>Lorem ipsum dolor sit amet, et aperiam qualisque sit. Posse diceret corrumpit eu sed. Nam no detraxit convenire. Exerci commodo postulant mel ex. Eos hendrerit voluptaria et, at est assum euripidis, te nam eius euismod delectus. Sea ei legendos sensibus delicatissimi, etiam sonet adversarium no qui.</p>
+                    <p>Ius atqui commune at, nominavi definitiones cum ad. Mei no clita bonorum appareat. No pri regione inimicus persecuti. Cu per mutat propriae repudiare. Saepe ridens aliquam an pri.</p><p>Ea elaboraret honestatis per. Option pericula mea ad, singulis torquatos ei sea, rebum latine bonorum has id. Eros graeci euismod per ei. Has doctus impetus tritani id, ex pri falli delenit probatus. Duo ut omnesque legendos intellegat, in est summo dicant nusquam.</p><p>Cetero feugiat lucilius an per, in eam dicam aliquid mnesarchum. At vis facer adipisci necessitatibus, id cetero aliquip usu, odio corpora liberavisse vis ea. In quo porro aeque. Ne ipsum aeque epicuri sea. Te vel maiorum insolens expetendis, et primis detracto corrumpit sit, agam case movet vis ut. Ei per solum detraxit dissentiet, zril torquatos quo cu.</p>
+                </article>
+            </li>
+
+            …
+        </ul>
+
+        <p id="loading">
+            Loading
+        </p>
+    </body>
+</html>
